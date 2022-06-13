@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board</title>
+
+    <style>
+        .active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<th:block th:replace="~{/include/header::header}" />
+
+<br>
+
+<table border="1" style="width:100%">
+    <tr th:each="item, i : ${list}">
+        <td th:text="${pagination.number} - ${i.index}"></td>
+        <td th:text="${item.title}"></td>
+        <td th:text="${#strings.substring(item.regDay,2,16)}"></td>
+    </tr>
+</table>
+
+<br>
+
+<div style="text-align:center">
+    <a th:href="@{/list(currentPage=1, keyword=${keyword})}">&#171;</a>
+    <a th:if="${pagination.firstPage-1!=0}" th:href="@{/list(currentPage=${pagination.firstPage-1}, keyword=${keyword})}">&lt;</a>
+
+    <th:block th:each="page: ${#numbers.sequence(pagination.firstPage, pagination.lastPage)}">
+        <a th:text="${page}" th:class="${pagination.currentPage==page}?'active':''"  th:href="@{/list(currentPage=${page}, keyword=${keyword})}"></a>
+    </th:block>
+
+    <a th:if="${pagination.lastPage!=pagination.totalPageCount}" th:href="@{/list(currentPage=${pagination.lastPage+1}, keyword=${keyword})}">&gt;</a>
+    <a th:href="@{/list(currentPage=${pagination.totalPageCount}, keyword=${keyword})}">&#187;</a>
+</div>
+
+<th:block th:replace="~{/include/footer::footer}" />
+
+</body>
+</html>
