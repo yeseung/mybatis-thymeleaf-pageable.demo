@@ -3,7 +3,7 @@ package com.gongdaeoppa.mybatisthymeleafpageable.controller;
 import com.gongdaeoppa.mybatisthymeleafpageable.domain.Board;
 import com.gongdaeoppa.mybatisthymeleafpageable.service.BoardService;
 import com.gongdaeoppa.mybatisthymeleafpageable.util.Pagination;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BoardController {
 
     private final BoardService boardService;

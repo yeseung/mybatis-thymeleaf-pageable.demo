@@ -3,13 +3,13 @@ package com.gongdaeoppa.mybatisthymeleafpageable.service;
 import com.gongdaeoppa.mybatisthymeleafpageable.domain.Board;
 import com.gongdaeoppa.mybatisthymeleafpageable.mapper.BoardMapper;
 import com.gongdaeoppa.mybatisthymeleafpageable.util.Pagination;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BoardService implements BoardMapper {
 
     private final BoardMapper boardMapper;
