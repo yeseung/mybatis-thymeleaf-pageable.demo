@@ -35,7 +35,7 @@ public class BoardController {
             @RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
             @RequestParam(value = "cntPerPage", required = false, defaultValue = "10") int cntPerPage,
             @RequestParam(value = "pageSize", required = false, defaultValue = "5") int pageSize,
-            Board board, Model model) {
+            Model model) {
 
         int listCnt = boardService.listTotal(keyword);
         Pagination pagination = new Pagination(currentPage, cntPerPage, pageSize);
