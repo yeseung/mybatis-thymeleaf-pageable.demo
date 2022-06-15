@@ -47,7 +47,7 @@ public class BoardController {
 
         model.addAttribute("list", list);
         model.addAttribute("pagination", pagination);
-        model.addAttribute("keyword", keyword);
+        //model.addAttribute("keyword", keyword);
 
         return "list";
 
