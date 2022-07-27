@@ -28,7 +28,7 @@
 
 <div style="text-align:center">
     <a th:href="@{/list(currentPage=1, keyword=${param.keyword})}">&#171;</a>
-    <a th:if="${pagination.firstPage-1!=0}" th:href="@{/list(currentPage=${pagination.firstPage-1}, keyword=${param.keyword})}">&lt;</a>
+    <a th:if="${pagination.firstPage-1!=0}" th:href="@{/list(currentPage=${pagination.firstPage-1}, keyword=${param.keyword})}">&lt</a>
 
     <th:block th:each="page: ${#numbers.sequence(pagination.firstPage, pagination.lastPage)}">
         <a th:text="${page}" th:class="${pagination.currentPage==page}?'active':''"  th:href="@{/list(currentPage=${page}, keyword=${param.keyword})}"></a>
