@@ -20,7 +20,7 @@
     <tr th:each="item, i : ${list}">
         <td th:text="${pagination.number} - ${i.index}"></td>
         <td th:text="${item.title}"></td>
-        <td th:text="${#strings.substring(item.regDay,2,16)}"></td>
+        <td th:text="${item.regDayForPrint}"></td>
     </tr>
 </table>
 
